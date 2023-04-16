@@ -1,0 +1,107 @@
+---
+title: "Türkiye'de Enflasyon ile İşsizlik Arasındaki Ödünleşme (2005 – 2023) "
+author: 
+  - Ahmet Özkaya[^1]
+bibliography: ../bibliography/biblio.bib
+csl: ../csl/apa-tr.csl
+header-includes:
+  - \usepackage{polyglossia}
+  - \setmainlanguage{turkish}
+  - \usepackage{booktabs}
+  - \usepackage{caption} 
+  - \captionsetup[table]{skip=10pt}
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    fig_height: 3
+    fig_width: 4
+    keep_tex: no
+    latex_engine: xelatex
+    number_sections: yes
+    toc: no
+geometry: margin=1in
+link-citations: yes
+urlcolor: blue
+fontsize: 12pt
+biblio-style: apalike
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+<!-- ======================================================================= -->
+<!-- ============================== NOTLAR ================================= -->
+<!-- ======================================================================= -->
+[^1]: 18080103, [Github Repo](https://github.com/Thekyble/istatistik.git)
+
+
+# Giriş
+  Fiyatlar genel düzeyindeki devamlı artışın göstergesi enflasyon ve kişilerin çalışmak isteyipte iş bulamadığı oranı gösteren işssizlik arasındaki ters ilişki iktisat teorilerinde çözülmeye çalışılan en büyük makroekonomik problemlerdendir. Karar alıcılar her zaman için düşük enflasyon düşük işsizlik düzeyini oluşturmaya çalışırlar. Ancak bu iki göstergenin birbiri ile gerçekleşmeyeceği Phillips Eğrisi ile iktisat literatüründe bahsedilir. 
+
+
+  Bir mal veya hizmete yönelik talep, arzına göre daha yüksekse, fiyatının
+yükselmesini bekleriz, talep fazlası arttıkça, [fiyatın] yükselme oranı da artarak. Tersine, arza göre talep düşük olduğunda, fiyatın düşmesini bekleriz,
+talep yetersizliği arttıkça, [fiyatın] düşüş oranı da artarak. Bu ilkenin, emek
+hizmetlerinin karşılığı olan parasal ücret oranlarındaki değişim oranını belirleyen faktörlerden biri olarak çalışması gerektiğini [düşünmek] akla yakın
+görünmektedir. Emek talebi yüksek ve çok az işsizlik olduğunda, diğer
+firmalardan ve endüstrilerden en uygun emeği çekebilmek için her firma ve
+her endüstri, sürekli olarak cari oranların biraz üzerinde teklif sunma yönünde
+istekli olduğundan, işverenlerin oldukça hızlı bir şekilde ücret oranlarını
+yükseltmelerini beklemeliyiz. Diğer taraftan, emek talebi düşük ve işsizlik
+yüksek olduğunda, işçiler cari oranların altında hizmetlerini sunmaya isteksiz
+gibi göründüğünden, ücret oranları çok yavaş bir şekilde düşmektedir. Bu
+yüzden, işsizlik ile ücret oranlarındaki değişim oranı arasındaki ilişkinin
+[highly] doğrusal olmaması [non-linear] olasıdır. @phillips1958relation
+
+ 
+  Phillips eğrisi, en azından 1960’ların sonlarına kadar, aktif
+toplam talep politikalarının (özellikle maliye politikalarının) sonucunda
+erişilmesi hedeflenen farklı işsizlik düzeylerinden doğan enflasyon oranını
+tahmin etmek için kullanılmıştır. 1960’ların sonunda ve 1970’lerin başında
+hem enflasyon hem de işsizliğin artmaya başlaması ve böylece tüm dünyada
+yaygın olarak ortaya çıkan stagflasyon sorunu, Phillips eğrisinin istikrarlılığına olan güvene son vermiş ve yeni soruna teorik ve pratik olarak yeni
+ekonomik çözümler bulma gereksinimi ortaya çıkmıştır. @akkucs2012phillips 
+
+ Son zamanlarda , Phillips eğrisinin eğiminin makroekonomik
+koşulların bir fonksiyonu olduğunu ve ilişkinin asimetrik olduğunu iddia eden birkaç çalışma yapılmıştır . Bu doğruysa, doğrusallık varsayımı
+çok kısıtlayıcıdır. @eliasson2001short
+
+1980-2015 yıllarını kapsayan yıllık enflasyon ve işsizlik verileri kullanılarak,
+bu değişkenler arasındaki kısa ve uzun dönemli ilişkileri incelemek amacıyla
+gerekli ekonometrik analizler yapılmıştır. Elde edilen sonuçlar neticesinde,
+Türkiye ekonomisinde işsizlik ve enflasyon arasında çift yönlü nedensellik ilişkisinin varlığına ulaşılamamıştır. Yani işsizliğin enflasyonun,
+enflasyonunda işsizliğin nedeni olmadığı sonucuna varılmıştır. @petek2017philips
+
+ 
+ Bu çalışmada Türkiye'nin 2005-2023 arası yıllara göre aylık enflasyon değişimi ve işssizlik verileri ([TÜİK veri portalı!](https://data.tuik.gov.tr/)) dan alınmıştır.
+
+
+## Çalışmanın Amacı
+  Phillips eğrisinin Türkiye’de 2005-2023 arasında sağlayıp sağlanmadığı araştırılacaktır.Türkiye'nin içinde bulunduğu enflasyonist ortamın işsizlik üzerindeki etkisi tartışılacaktır. Phillips eğrisinin doğrusal ve doğrusal olmayan modelleri ile, Türkiye özelinde kronik yüksek enflasyon ve işsizliğin sebepleri ve hanehalkı üzerinde etkileri anlatılmaya çalışılacaktır.   
+
+## Literatür 
+  İktisat makalelerinde enflasyon ve işsizlik arasındaki bağlantıları işleyen bir çok makale mevcuttur. Ülkelere ve bölgelere göre değişikliklerin Philips eğrisini sağladığını sonucuna varılırken,bazı çalışmalarda herhangi bir bağıntının olmadığı görülmüştür.  Literatürdeki temel ampirik çalışmalar aşağıda belirtilecektir.
+
+ @uysal2004enflasyon, 1980 - 2002 yılları arası dönem için Türkiye Ekonomisinin işsizlik - enflasyon ilişkisini regresyon analizi ve nedensellik testi ile incelemişlerdir. 
+Türkiye’de 1990 – 2011 döneminde Philips eğrisi’nin geçerliliğini regresyon analizi ile oranların arasındaki ilişki nedensellik ilişkisine bakmışlardır.
+
+
+@eliasson2001short, İsveç, Avustralya ve ABD için  regresyon analizi kullanarak araştırmıştır. Avustralya ve İsveç’te değişkenler arasında doğrusal bir Philips eğrisi; ABD için doğrusal olmayan bir Philips eğrisinin söz konusu olduğunu belirtmiştir.
+
+
+@petek2017philips , 1980-2015 arası Eşbütünleşme analizini, Granger nedensellik testini ve VAR analizini kullanarak Philips eğrisinin Türkiye ekonomisi açısından geçerliliğini test etmeyi amaçlamışlardır. Yaptıkları analizler sonucunda Türkiye ekonomisinde enflasyon ile işsizlik arasında nedensellik ilişkisinin varlığının tespit edilemediğini ortaya koymuşlardır.
+
+ 
+ 
+
+
+
+
+
+
+
+
+\newpage
+# Kaynakça {#references}
+<div id="refs"></div>
+
